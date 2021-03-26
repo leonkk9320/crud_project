@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.leonkk.login_wx.dao.UserMappers">
+    <select id="queryAll" resultType="user">
+        SELECT * FROM demovx.users
+    </select>
+
+    <select id="queryUserById" resultType="user">
+        SELECT * FROM demovx.users WHERE id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="user">
+        INSERT INTO demovx.users(id, name, age) VALUES
+            (#{id}, #{name}, #{age});
+    </insert>
+
+    <update id="updateUser" parameterType="user">
+        UPDATE demovx.users
+        SET
+            name = #{name},
+            age = #{age}
+        WHERE id = #{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM demovx.users
+        WHERE id = #{id};
+    </delete>
+</mapper>

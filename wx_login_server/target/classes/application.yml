@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Spring Boot 的数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mybatis?serverTimezone=Asia/Shanghai
+    username: root
+    password: Waagl2411
+
+  # 指定实体类的包
+mybatis:
+  type-aliases-package: com.leonkk.login_wx.entity
+
+
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
